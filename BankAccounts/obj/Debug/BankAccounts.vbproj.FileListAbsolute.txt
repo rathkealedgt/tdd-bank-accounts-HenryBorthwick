@@ -1,0 +1,11 @@
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\bin\Debug\BankAccounts.exe.config
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\bin\Debug\BankAccounts.exe
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\bin\Debug\BankAccounts.pdb
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\bin\Debug\BankAccounts.xml
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.vbprojAssemblyReference.cache
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.Resources.resources
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.vbproj.GenerateResource.cache
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.vbproj.CoreCompileInputs.cache
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.exe
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.xml
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.pdb
