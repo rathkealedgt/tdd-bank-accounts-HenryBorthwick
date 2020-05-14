@@ -149,15 +149,15 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
     <TestMethod()> Public Sub TestDeposit()
 
+        ' Dim ExpectedValue As Double = 1000000
         'Arrange
         Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
-
 
         'Act
         Account1.Deposit(98663.72)
 
         'Assert
-        Assert.AreEqual(1000000, Account1.GetAccountBalence())
+        Assert.AreEqual(1000000.0, Account1.GetAccountBalence())
 
 
 

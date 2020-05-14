@@ -80,6 +80,11 @@ Public Class BankAccount
         Dim OldBalence As Double = GetAccountBalence()
         Me.AccountBalence = Amount + OldBalence
 
+
         Return Nothing
+
+        'Return Me.GetAccountBalence
+        'Return Me.AccountBalence
+        'Return Double and NEw Value
     End Function
 End Class
