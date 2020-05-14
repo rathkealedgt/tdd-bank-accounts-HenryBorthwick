@@ -76,8 +76,9 @@ Public Class BankAccount
 
     'Deposit Money To Balence/ Set New Balence
     Public Function Deposit(Amount As Double)
-        Dim Balence As Double = GetAccountBalence()
-        Me.AccountBalence = Amount + Balence
+
+        Dim OldBalence As Double = GetAccountBalence()
+        Me.AccountBalence = Amount + OldBalence
 
         Return Nothing
     End Function
