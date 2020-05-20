@@ -1,8 +1,12 @@
-﻿''' <summary>
+﻿Imports System.Text
+
+''' <summary>
 ''' Represents a bank account 
 ''' </summary>
 ''' <Author> Henry J Borthwick </Author>
 ''' <Date> 14/05/20 </Date>
+
+
 Public Class BankAccount
 
     'Attributes
@@ -77,8 +81,8 @@ Public Class BankAccount
     'Deposit Money To Balence/ Set New Balence
     Public Function Deposit(Amount As Double)
 
-        Dim OldBalence As Double = GetAccountBalence()
-        Me.AccountBalence = Amount + OldBalence
+        ' Dim OldBalence As Double = GetAccountBalence()
+        Me.AccountBalence = Amount + Me.GetAccountBalence
 
 
         Return Nothing
@@ -87,4 +91,42 @@ Public Class BankAccount
         'Return Me.AccountBalence
         'Return Double and NEw Value
     End Function
+
+    Public Function WithDrawalSmall(Amount As Double)
+
+        If Amount > Me.AccountBalence Then
+
+            Throw New Exception("Insufficient Funds")
+
+        End If
+
+        Me.AccountBalence = Me.GetAccountBalence - Amount
+
+        Return Nothing
+    End Function
+
+    'Apply Intrest Rate 
+    'Principal x intrest rate x time = Intrest + Oldbalence = Applied Balence
+    'THis is based on a mouth interest
+    Public Function ApplyIntrest()
+
+        Dim AmountFromIntrest As Double = Me.GetAccountBalence() * (Me.GetAccountIntrestRate() / 100) * (1 / 12)
+        Me.AccountBalence = Math.Round(AmountFromIntrest + Me.AccountBalence)
+
+        Return Nothing
+    End Function
+
+    Public Overrides Function ToString() As String
+
+        Dim AccountString As New StringBuilder()
+        AccountString.Append("Switzerland" & vbCrLf)
+        AccountString.Append("CH93 0076 2001 6734 8790 2" & vbCrLf)
+        AccountString.Append("Mrs Ivana Wayout" & vbCrLf)
+        AccountString.Append("IntrestRate 3.0%" & vbCrLf)
+        AccountString.Append("901336.28" & vbCrLf)
+
+        Return AccountString.ToString()
+
+    End Function
+
 End Class

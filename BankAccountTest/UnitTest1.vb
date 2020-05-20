@@ -1,4 +1,5 @@
 ﻿Imports System.Text
+Imports BankAccounts
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
 <TestClass()> Public Class UnitTest1
@@ -151,7 +152,7 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
 
         ' Dim ExpectedValue As Double = 1000000
         'Arrange
-        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
+        Dim Account1 As BankAccount = Me.NewAccount()
 
         'Act
         Account1.Deposit(98663.72)
@@ -159,9 +160,89 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         'Assert
         Assert.AreEqual(1000000.0, Account1.GetAccountBalence())
 
+    End Sub
+
+    <TestMethod()> Public Sub TestWithDrawalSmall()
+
+        'Act
+        Dim Account1 As BankAccount = Me.NewAccount()
+
+        'Arrange
+        Account1.WithDrawalSmall(1336.28)
+
+        'Assert
+        Assert.AreEqual(Account1.GetAccountBalence, 900000.0)
 
 
     End Sub
+
+    <TestMethod()> Public Sub TestWithDrawalToBig()
+
+        'Act
+        Dim Account1 As BankAccount = Me.NewAccount()
+
+        'Arrange
+        Try
+            Account1.WithDrawalSmall(1000000.0)
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+        End Try
+
+        'Assert
+        Assert.AreEqual(Account1.GetAccountBalence, 901336.28)
+
+
+
+    End Sub
+
+    <TestMethod()> Public Sub TestApplyIntrestRate()
+
+        'Arrange
+        Dim Account1 As BankAccounts.BankAccount = Me.NewAccount()
+
+        'Act (One Mouths Intrest)
+        Account1.ApplyIntrest()
+
+        'Assert
+        Assert.AreEqual(Account1.GetAccountBalence, 903590.0)
+
+
+    End Sub
+
+    <TestMethod()> Public Sub TestToString()
+
+        'Dim AccountCountryOrigin As String = "Switzerland"
+        'Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        ' Dim AccountHolder As String = "Mrs Ivana Wayout"
+        'Dim AccountIntrestrate As Double = 3.0
+        'Dim AccountBalence As Double = 901336.28
+
+        'vbcrlf = Enter Key
+
+
+        'Arrange
+        'Display and Set Expected Output
+        Dim ExpectedValueString As New StringBuilder()
+        ExpectedValueString.Append("Switzerland" & vbCrLf)
+        ExpectedValueString.Append("CH93 0076 2001 6734 8790 2" & vbCrLf)
+        ExpectedValueString.Append("Mrs Ivana Wayout" & vbCrLf)
+        ExpectedValueString.Append("IntrestRate 3.0%" & vbCrLf)
+        ExpectedValueString.Append("901336.28" & vbCrLf)
+        'Console.WriteLine(ExpectedValueString.ToString())
+
+        Dim Account1 As BankAccount = NewAccount()
+
+        'Act
+        Dim ActualString = Account1.ToString()
+        'Console.WriteLine(ActualString)
+
+        'Assert
+        Assert.AreEqual(ExpectedValueString.ToString(), ActualString)
+
+
+
+    End Sub
+
 
 End Class
 
