@@ -9,3 +9,4 @@ C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBo
 C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.exe
 C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.xml
 C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.pdb
+C:\Users\Henry\Documents\A Visual Studio Code Projects\tdd-bank-accounts-HenryBorthwick\BankAccounts\obj\Debug\BankAccounts.BankAccountsForm.resources
