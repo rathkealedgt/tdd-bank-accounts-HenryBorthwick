@@ -16,7 +16,7 @@
 
 
     'Helper Methods
-    Public Function SetTestForTesting(AccountHolder As String, AccountNumber As String, AccountBalence As String, AccountIntrestRate As String, AccountCountryOfOrigin As String)
+    Public Function SetSringForTesting(AccountHolder As String, AccountNumber As String, AccountBalence As String, AccountIntrestRate As String, AccountCountryOfOrigin As String)
 
         'Arrange
         txtAccountHolder.Text = AccountHolder
@@ -25,17 +25,31 @@
         txtAccountInterestRate.Text = AccountIntrestRate
         txtAccountCountryOfOrigin.Text = AccountCountryOfOrigin
 
-
+        Return Nothing
     End Function
 
     Private Sub btnApplyInterest_Click(sender As Object, e As EventArgs) Handles btnApplyInterest.Click
-        SetTestForTesting("One", "Two", "Three", "Four", "Five")
+        SetSringForTesting("One", "Two", "Three", "Four", "Five")
 
     End Sub
 
     Public Function GetAccounts() As BankAccount()
 
         Return Me.Accounts
+
+    End Function
+
+    Public Function CreateAccount()
+        Dim AccountHolder As String = txtAccountHolder.Text
+        Dim AccountNumber As String = txtAccountNumber.Text
+        Dim AccountIntrestRate As Double = CDbl(txtAccountInterestRate.Text)
+        Dim AccountBalence As Double = CDbl(txtAccountBalence.Text)
+        Dim AccountCountryOfOrigin As String = txtAccountCountryOfOrigin.Text
+
+        Dim NewAccount As New BankAccount(AccountHolder, AccountNumber, AccountIntrestRate, AccountBalence, AccountCountryOfOrigin)
+        Me.Accounts(Me.NumAccounts) = NewAccount
+
+        Return Nothing
 
     End Function
 End Class

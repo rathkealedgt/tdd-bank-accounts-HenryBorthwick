@@ -1,5 +1,6 @@
 ﻿Imports System.Text
 Imports Microsoft.VisualStudio.TestTools.UnitTesting
+Imports BankAccounts
 
 <TestClass()> Public Class UnitTest2
 
@@ -11,14 +12,20 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
         Dim AccountBalence As String = "901336.28"
         Dim AccountCountryOrigin As String = "Switzerland"
 
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountIntrestrate, AccountBalence, AccountCountryOrigin)
+
 
         'Act
-        Dim BAF As New BankAccountsForm()
-        Dim TempAccount() As BankAccount = BAF.GetAccounts
+        BAF.CreateAccount()
+        Dim TempAccount() As BankAccount = BAF.GetAccounts()
 
         'Arrest
         Assert.AreEqual(AccountHolder, TempAccount(0).GetAccountHolder())
-
+        Assert.AreEqual(AccountNumber, TempAccount(0).GetAccountNumber())
+        Assert.AreEqual(3.0, TempAccount(0).GetAccountIntrestRate())
+        Assert.AreEqual(901336.28, TempAccount(0).GetAccountBalence())
+        Assert.AreEqual(AccountCountryOrigin, TempAccount(0).GetAccountCountryOfOrigin())
     End Sub
 
 End Class
