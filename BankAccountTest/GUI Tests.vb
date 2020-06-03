@@ -8,12 +8,12 @@ Imports BankAccounts
         'Arrange
         Dim AccountHolder As String = "Mrs Ivana Wayout"
         Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
-        Dim AccountIntrestrate As String = "3.0"
         Dim AccountBalence As String = "901336.28"
+        Dim AccountIntrestrate As String = "3.0"
         Dim AccountCountryOrigin As String = "Switzerland"
 
         Dim BAF As New BankAccountsForm()
-        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountIntrestrate, AccountBalence, AccountCountryOrigin)
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
 
 
         'Act
@@ -28,4 +28,135 @@ Imports BankAccounts
         Assert.AreEqual(AccountCountryOrigin, TempAccount(0).GetAccountCountryOfOrigin())
     End Sub
 
+    <TestMethod()> Public Sub TestEmptyAccountHolder()
+
+        'Arrange
+        Dim AccountHolder As String = ""
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountIntrestrate, AccountBalence, AccountCountryOrigin)
+
+        'Act
+        Try
+            BAF.CreateAccount()
+            Assert.Fail()
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("AccountHolderRequiredException", ex.Message)
+
+        End Try
+
+    End Sub
+
+
+    <TestMethod()> Public Sub TestEmptyAccountNumber()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = ""
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+
+        'Act
+        Try
+            BAF.CreateAccount()
+            Assert.Fail() ' Test Fails if executed
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("AccountNumberRequiredException", ex.Message)
+
+        End Try
+
+    End Sub
+
+    <TestMethod()> Public Sub TestEmptyAccountInterestRate()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountIntrestrate As String = ""
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+
+        'Act
+        Try
+            BAF.CreateAccount()
+            Assert.Fail()
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("AccountIntrestRateRequiredException", ex.Message)
+
+        End Try
+
+    End Sub
+
+
+    <TestMethod()> Public Sub TestEmptyAccountBalence()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountBalence As String = ""
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+
+        'Act
+        Try
+            BAF.CreateAccount()
+            Assert.Fail()
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("AccountBalenceRequiredException", ex.Message)
+
+        End Try
+
+    End Sub
+
+    <TestMethod()> Public Sub TestEmptyCountryOfOrigin()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountCountryOrigin As String = ""
+
+        Dim BAF As New BankAccountsForm()
+        BAF.SetSringForTesting(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+
+        'Act
+        Try
+            BAF.CreateAccount()
+            Assert.Fail()
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("AccountCountryOfOriginRequiredException", ex.Message)
+
+        End Try
+
+    End Sub
 End Class

@@ -40,16 +40,28 @@
     End Function
 
     Public Function CreateAccount()
+
+
+        'Gaurd Clause
+        If txtAccountHolder.Text = "" Then Throw New Exception("AccountHolderRequiredException")
+        If txtAccountNumber.Text = "" Then Throw New Exception("AccountNumberRequiredException")
+        If txtAccountBalence.Text = "" Then Throw New Exception("AccountBalenceRequiredException")
+        If txtAccountInterestRate.Text = "" Then Throw New Exception("AccountIntrestRateRequiredException")
+        If txtAccountCountryOfOrigin.Text = "" Then Throw New Exception("AccountCountryOfOriginRequiredException")
+
         Dim AccountHolder As String = txtAccountHolder.Text
         Dim AccountNumber As String = txtAccountNumber.Text
-        Dim AccountIntrestRate As Double = CDbl(txtAccountInterestRate.Text)
         Dim AccountBalence As Double = CDbl(txtAccountBalence.Text)
+        Dim AccountIntrestRate As Double = CDbl(txtAccountInterestRate.Text)
         Dim AccountCountryOfOrigin As String = txtAccountCountryOfOrigin.Text
 
-        Dim NewAccount As New BankAccount(AccountHolder, AccountNumber, AccountIntrestRate, AccountBalence, AccountCountryOfOrigin)
+        Dim NewAccount As New BankAccount(AccountHolder, AccountNumber, AccountBalence, AccountIntrestRate, AccountCountryOfOrigin)
         Me.Accounts(Me.NumAccounts) = NewAccount
+
 
         Return Nothing
 
     End Function
+
+
 End Class
