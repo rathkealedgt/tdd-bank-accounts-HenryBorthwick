@@ -41,7 +41,8 @@ Partial Class BankAccountsForm
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnApplyInterest = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button6 = New System.Windows.Forms.Button()
+        Me.AdAcnt = New System.Windows.Forms.Button()
+        Me.PrintAllAccounts = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'txtAccountBalence
@@ -202,21 +203,32 @@ Partial Class BankAccountsForm
         Me.Button5.Text = "Clear Displayed Accounts"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button6
+        'AdAcnt
         '
-        Me.Button6.Location = New System.Drawing.Point(12, 549)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(150, 60)
-        Me.Button6.TabIndex = 20
-        Me.Button6.Text = "Add Account"
-        Me.Button6.UseVisualStyleBackColor = True
+        Me.AdAcnt.Location = New System.Drawing.Point(12, 549)
+        Me.AdAcnt.Name = "AdAcnt"
+        Me.AdAcnt.Size = New System.Drawing.Size(150, 60)
+        Me.AdAcnt.TabIndex = 20
+        Me.AdAcnt.Text = "Add Account"
+        Me.AdAcnt.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.AdAcnt.UseVisualStyleBackColor = True
+        '
+        'PrintAllAccounts
+        '
+        Me.PrintAllAccounts.Location = New System.Drawing.Point(985, 212)
+        Me.PrintAllAccounts.Name = "PrintAllAccounts"
+        Me.PrintAllAccounts.Size = New System.Drawing.Size(200, 66)
+        Me.PrintAllAccounts.TabIndex = 21
+        Me.PrintAllAccounts.Text = "Print All Accounts"
+        Me.PrintAllAccounts.UseVisualStyleBackColor = True
         '
         'BankAccountsForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(12.0!, 25.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1530, 772)
-        Me.Controls.Add(Me.Button6)
+        Me.Controls.Add(Me.PrintAllAccounts)
+        Me.Controls.Add(Me.AdAcnt)
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.btnApplyInterest)
         Me.Controls.Add(Me.Button3)
@@ -262,5 +274,6 @@ Partial Class BankAccountsForm
     Friend WithEvents Button3 As Windows.Forms.Button
     Friend WithEvents btnApplyInterest As Windows.Forms.Button
     Friend WithEvents Button5 As Windows.Forms.Button
-    Friend WithEvents Button6 As Windows.Forms.Button
+    Friend WithEvents AdAcnt As Windows.Forms.Button
+    Friend WithEvents PrintAllAccounts As Windows.Forms.Button
 End Class

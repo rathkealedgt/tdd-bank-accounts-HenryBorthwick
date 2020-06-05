@@ -159,4 +159,71 @@ Imports BankAccounts
         End Try
 
     End Sub
+
+    <TestMethod()> Public Sub TestAddFiveNewAccounts()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+
+        'Act
+        Try
+            For Counter As Integer = 0 To 4
+                BAF.SetSringForTesting(Counter & "_" & AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+                BAF.CreateAccount()
+
+            Next Counter
+
+        Catch ex As Exception
+            Assert.Fail()
+
+        End Try
+
+
+        'Assert
+        Dim TempAccounts() As BankAccount = BAF.GetAccounts()
+
+        For Each BAFF In TempAccounts
+
+            If BAF Is Nothing Then Assert.Fail()
+        Next
+
+    End Sub
+
+
+    <TestMethod()> Public Sub TestCannotAddSixAccounts()
+
+        'Arrange
+        Dim AccountHolder As String = "Mrs Ivana Wayout"
+        Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
+        Dim AccountBalence As String = "901336.28"
+        Dim AccountIntrestrate As String = "3.0"
+        Dim AccountCountryOrigin As String = "Switzerland"
+
+        Dim BAF As New BankAccountsForm()
+
+        'Act
+        Try
+            For Counter As Integer = 0 To 5
+                BAF.SetSringForTesting(Counter & "_" & AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+                BAF.CreateAccount()
+
+            Next Counter
+
+            'Assert
+            Assert.Fail()
+
+        Catch ex As Exception
+
+            'Assert
+            Assert.AreEqual("MaximumAccountsReachedException", ex.Message())
+
+        End Try
+
+    End Sub
 End Class
