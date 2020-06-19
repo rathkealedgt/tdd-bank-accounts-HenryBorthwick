@@ -58,10 +58,21 @@ Public Class BankAccountsForm
         End Try
 
         MsgBox(Feedback, vbOKOnly, Title)
+        txtAccountHolder.Clear()
+        txtAccountNumber.Clear()
+        txtAccountBalence.Clear()
+        txtAccountInterestRate.Clear()
+        txtAccountCountryOfOrigin.Clear()
+
     End Sub
 
     Private Sub btnApplyInterest_Click(sender As Object, e As EventArgs) Handles btnApplyInterest.Click
-        SetSringForTesting("One", "Two", "Three", "Four", "Five")
+        For Each BAF As BankAccount In Me.Accounts
+            If BAF Is Nothing Then Exit For
+
+            BAF.ApplyIntrest()
+
+        Next
 
     End Sub
 

@@ -126,14 +126,14 @@ Imports Microsoft.VisualStudio.TestTools.UnitTesting
     End Sub
 
     'Function to Allow the assiging of varibles to varible for testing
-    Private Function NewAccount() As BankAccounts.BankAccount
+    Private Function NewAccount() As BankAccount
         Dim AccountHolder As String = "Mrs Ivana Wayout"
         Dim AccountNumber As String = "CH93 0076 2001 6734 8790 2"
         Dim AccountIntrestrate As Double = 3.0
         Dim AccountBalence As Double = 901336.28
         Dim AccountCountryOrigin As String = "Switzerland"
 
-        Return New BankAccounts.BankAccount(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
+        Return New BankAccount(AccountHolder, AccountNumber, AccountBalence, AccountIntrestrate, AccountCountryOrigin)
 
     End Function
 

@@ -37,7 +37,7 @@ Partial Class BankAccountsForm
         Me.Button2 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox7 = New System.Windows.Forms.TextBox()
+        Me.txtListAccounts = New System.Windows.Forms.TextBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btnApplyInterest = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -167,14 +167,14 @@ Partial Class BankAccountsForm
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "Accounts:"
         '
-        'TextBox7
+        'txtListAccounts
         '
-        Me.TextBox7.Location = New System.Drawing.Point(357, 91)
-        Me.TextBox7.Multiline = True
-        Me.TextBox7.Name = "TextBox7"
-        Me.TextBox7.ScrollBars = System.Windows.Forms.ScrollBars.Both
-        Me.TextBox7.Size = New System.Drawing.Size(400, 572)
-        Me.TextBox7.TabIndex = 16
+        Me.txtListAccounts.Location = New System.Drawing.Point(357, 91)
+        Me.txtListAccounts.Multiline = True
+        Me.txtListAccounts.Name = "txtListAccounts"
+        Me.txtListAccounts.ScrollBars = System.Windows.Forms.ScrollBars.Both
+        Me.txtListAccounts.Size = New System.Drawing.Size(400, 572)
+        Me.txtListAccounts.TabIndex = 16
         '
         'Button3
         '
@@ -232,7 +232,7 @@ Partial Class BankAccountsForm
         Me.Controls.Add(Me.Button5)
         Me.Controls.Add(Me.btnApplyInterest)
         Me.Controls.Add(Me.Button3)
-        Me.Controls.Add(Me.TextBox7)
+        Me.Controls.Add(Me.txtListAccounts)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Button2)
@@ -270,7 +270,7 @@ Partial Class BankAccountsForm
     Friend WithEvents Button2 As Windows.Forms.Button
     Friend WithEvents TextBox1 As Windows.Forms.TextBox
     Friend WithEvents Label7 As Windows.Forms.Label
-    Friend WithEvents TextBox7 As Windows.Forms.TextBox
+    Friend WithEvents txtListAccounts As Windows.Forms.TextBox
     Friend WithEvents Button3 As Windows.Forms.Button
     Friend WithEvents btnApplyInterest As Windows.Forms.Button
     Friend WithEvents Button5 As Windows.Forms.Button
